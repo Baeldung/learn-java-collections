@@ -1,3 +1,3 @@
-# Learn Java Collections - Deep Dive Into Lists
+# Learn Java Collections - Iteration and Comparison
 
-This is the codebase for Module "Deep Dive Into Lists" of Learn Java Collections.
+This is the codebase for Module "Iteration and Comparison" of Learn Java Collections.

@@ -1,3 +1,3 @@
-# Learn Java Collections - Working with Maps
+# Learn Java Collections - Other Collection Types
 
-This is the codebase for Module "Working with Maps" of Learn Java Collections.
+This is the codebase for Module "Other Collection Types" of Learn Java Collections.

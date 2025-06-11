@@ -1,3 +1,3 @@
-# Learn Java Collections - Working with Sets
+# Learn Java Collections - Working with Maps
 
-This is the codebase for Module "Working with Sets" of Learn Java Collections.
+This is the codebase for Module "Working with Maps" of Learn Java Collections.

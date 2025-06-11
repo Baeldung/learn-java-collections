@@ -1,8 +1,3 @@
-# About this repo
+# Learn Java Collections - Overview of Java Collections
 
-This is the codebase of the **Learn Java Collections** course.
-
-If you're already a student of the course you can start exploring this through the lesson notes in the course.
-
-Note that the code for each module is hosted on its own branch, you'll have to switch to the branch corresponding to the module you're on, for example: `git checkout module1`
-
+This is the codebase for Module "Overview of Java Collections" of Learn Java Collections.

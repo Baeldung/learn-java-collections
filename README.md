@@ -1,3 +1,3 @@
-# Learn Java Collections - Iteration and Comparison
+# Learn Java Collections - Working with Sets
 
-This is the codebase for Module "Iteration and Comparison" of Learn Java Collections.
+This is the codebase for Module "Working with Sets" of Learn Java Collections.

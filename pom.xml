@@ -12,5 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>introduction-arraylists-start</module>
+        <module>introduction-arraylists-end</module>
+        <module>basic-arraylist-operations-start</module>
+        <module>basic-arraylist-operations-end</module>
     </modules>
 </project>

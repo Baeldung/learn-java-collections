@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>enhanced-for-loops-start</module>
+        <module>enhanced-for-loops-end</module>
     </modules>
 </project>

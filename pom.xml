@@ -14,5 +14,7 @@
     <modules>
         <module>enhanced-for-loops-start</module>
         <module>enhanced-for-loops-end</module>
+        <module>iterators-start</module>
+        <module>iterators-end</module>
     </modules>
 </project>

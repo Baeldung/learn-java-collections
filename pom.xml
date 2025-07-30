@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>introduction-hashmap-start</module>
+        <module>introduction-hashmap-end</module>     
     </modules>
 </project>

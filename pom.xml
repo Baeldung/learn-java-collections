@@ -16,5 +16,7 @@
         <module>enhanced-for-loops-end</module>
         <module>iterators-start</module>
         <module>iterators-end</module>
+        <module>sorting-collections-start</module>
+        <module>sorting-collections-end</module>
     </modules>
 </project>

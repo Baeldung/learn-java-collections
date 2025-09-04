@@ -12,7 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>basic-hashset-operations-start</module>
+        <module>basic-hashset-operations-end</module>
         <module>introduction-hashset-start</module>
-        <module>introduction-hashset-end</module>          
+        <module>introduction-hashset-end</module>
     </modules>
 </project>

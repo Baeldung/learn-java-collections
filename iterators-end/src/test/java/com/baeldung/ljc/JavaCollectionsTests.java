@@ -1,7 +1,10 @@
 package com.baeldung.ljc;
 
+import java.time.LocalDate;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
@@ -140,5 +143,35 @@ class JavaCollectionsTests {
         for (Task task : tasks) {
             System.out.println(task.getName() + " - " + task.getDescription());
         }
+    }
+
+    @Test
+    void whenUsingIterableForEach_ElementDataIsConsumed() {
+        // Arrange
+        List<String> collectedCodes = new ArrayList<>();
+        List<String> expectedCodes = List.of("001", "002", "003", "004");
+
+        // Act: Use forEach to consume data from each task and add it to another list
+        tasks.forEach(task -> collectedCodes.add(task.getCode()));
+
+        // Assert: Verify the new list contains exactly the codes from the tasks
+        assertNotNull(collectedCodes);
+        assertEquals(4, collectedCodes.size(), "The collected list should have 4 codes");
+        assertEquals(expectedCodes, collectedCodes, "The collected codes should match the expected codes");
+    }
+
+    @Test
+    void whenUsingIterableForEach_shouldSetDueDateForAllTasks() {
+        // Arrange
+        LocalDate expectedDueDate = LocalDate.of(2050, 12, 31);
+
+        // Act: Use forEach to modify each task
+        tasks.forEach(task -> task.setDueDate(expectedDueDate));
+
+        // Assert: Verify that every task's due date was updated
+        tasks.forEach(task -> {
+            assertNotNull(task.getDueDate(), "Due date should not be null");
+            assertEquals(expectedDueDate, task.getDueDate(), "Due date should match the expected date");
+        });
     }
 }

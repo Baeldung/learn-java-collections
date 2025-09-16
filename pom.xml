@@ -13,8 +13,10 @@
 
     <modules>
         <module>introduction-hashmap-start</module>
-        <module>introduction-hashmap-end</module>  
+        <module>introduction-hashmap-end</module>
+        <module>iterating-over-hashmaps-start</module>
+        <module>iterating-over-hashmaps-end</module>
         <module>basic-hashmap-operations-start</module>
-        <module>basic-hashmap-operations-end</module>      
+        <module>basic-hashmap-operations-end</module>
     </modules>
 </project>

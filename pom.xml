@@ -16,5 +16,7 @@
         <module>basic-hashset-operations-end</module>
         <module>introduction-hashset-start</module>
         <module>introduction-hashset-end</module>
+        <module>treeset-sorted-set-and-natural-processing-start</module>
+        <module>treeset-sorted-set-and-natural-processing-end</module>
     </modules>
 </project>

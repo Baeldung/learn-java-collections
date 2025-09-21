@@ -18,5 +18,9 @@
         <module>iterating-over-hashmaps-end</module>
         <module>basic-hashmap-operations-start</module>
         <module>basic-hashmap-operations-end</module>
+        <module>treemap-start</module>
+        <module>treemap-end</module>
+        <module>linkedhashmap-start</module>
+        <module>linkedhashmap-end</module>     
     </modules>
 </project>

@@ -21,8 +21,7 @@ class LinkedHashSetUnitTest {
         mySet.add("two");
         mySet.add("three");
         mySet.add("four");
-        List<String> orderedElements = new ArrayList<>(mySet);
-        assertEquals(List.of("one", "two", "three", "four"), orderedElements);
+        assertEquals("[one, two, three, four]", mySet.toString());
     }
 
 

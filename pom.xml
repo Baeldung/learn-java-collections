@@ -12,5 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>the-collections-class-start</module>
+        <module>the-collections-class-end</module>
+        <module>generics-start</module>
+        <module>generics-end</module>
     </modules>
 </project>

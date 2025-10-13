@@ -18,5 +18,7 @@
         <module>generics-end</module>
         <module>the-collections-class-start</module>
         <module>the-collections-class-end</module>
+        <module>sequenced-collections-start</module>  
+        <module>sequenced-collections-end</module>
     </modules>
 </project>

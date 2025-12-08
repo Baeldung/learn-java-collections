@@ -12,6 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>arrays-start</module>
+        <module>arrays-end</module>
         <module>from-arrays-to-collections-start</module>
         <module>from-arrays-to-collections-end</module>
     </modules>

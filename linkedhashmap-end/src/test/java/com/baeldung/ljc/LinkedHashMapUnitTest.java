@@ -96,7 +96,7 @@ class LinkedHashMapUnitTest {
         assertEquals(expectedOrderAfterAccess, actualOrderAfterAccess, "The accessed key 'T002' should move to the end.");
     }
 
-    private class LruCache<K, V> extends LinkedHashMap<K, V> {
+    private static class LruCache<K, V> extends LinkedHashMap<K, V> {
 
         private final int capacity;
 

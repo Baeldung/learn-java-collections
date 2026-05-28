@@ -58,6 +58,11 @@ class HashSetUnitTest {
     }
 
     @Test
+    void whenCallPrintLnOnTasks_thenCorrect() {
+        System.out.println(tasks);
+    }
+
+    @Test
     void whenAddOneTaskToTasks_thenCorrect() {
         // adding task05
         boolean addedTask05 = tasks.add(task05);

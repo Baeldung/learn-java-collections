@@ -1,6 +1,6 @@
 package com.baeldung.ljc;
 
-class QueuesUniTest {
+class QueuesUnitTest {
 
 }
 

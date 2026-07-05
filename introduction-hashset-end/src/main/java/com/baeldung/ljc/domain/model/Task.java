@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.time.LocalDate;
 
 public class Task {
-    
+
     private String code;
 
     private String name;
@@ -20,12 +20,10 @@ public class Task {
         this.dueDate = dueDate;
     }
 
-    
     public String getCode() {
         return code;
     }
 
-    
     public void setCode(String code) {
         this.code = code;
     }
@@ -61,8 +59,10 @@ public class Task {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         Task task = (Task) o;
         return Objects.equals(code, task.code); // Task code is typically unique
     }

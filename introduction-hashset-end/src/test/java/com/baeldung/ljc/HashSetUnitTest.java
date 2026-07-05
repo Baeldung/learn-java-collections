@@ -19,7 +19,7 @@ class HashSetUnitTest {
     @Test
     void givenDefaultHashSetConstructor_whenInitializing_thenEmptyHashSetCreated() {
         Set<String> defaultSet = new HashSet<>();
-      
+
         assertNotNull(defaultSet);
         assertEquals(0, defaultSet.size());
     }
@@ -34,7 +34,7 @@ class HashSetUnitTest {
     @Test
     void givenInitialCapacityAndLoadFactor_whenCreatingHashSet_thenEmptySetCreated() {
         Set<Double> customSet = new HashSet<>(5, 0.8f);
-         
+
         assertNotNull(customSet);
     }
 
@@ -53,23 +53,23 @@ class HashSetUnitTest {
         Task task3 = new Task("T001", "Review Code", "Review the new feature's code", LocalDate.of(2025, 7, 18)); // Duplicate taskCode
         Task task4 = new Task("T003", "Prepare Presentation", "Create slides for the project update", LocalDate.of(2025, 7, 25));
 
-        List<Task> taskList = Arrays.asList(task1, task2, task3, task4); 
+        List<Task> taskList = Arrays.asList(task1, task2, task3, task4);
         Set<Task> taskSet = new HashSet<>(taskList);
-        
+
         assertEquals(3, taskSet.size());
     }
-    
+
     @Test
     void givenASetOfObjects_whenUsingSetOfMethod_thenSetCreated() {
         Set<String> fruitSet = Set.of("Apple", "Banana", "Orange");
-        
+
         assertEquals(3, fruitSet.size());
     }
 
     @Test
     void givenASingleObject_whenUsingCollectionsSingletonMethod_thenSetCreated() {
         Set<String> fruitSet = Collections.singleton("Apple");
-        
+
         assertEquals(1, fruitSet.size());
     }
 }

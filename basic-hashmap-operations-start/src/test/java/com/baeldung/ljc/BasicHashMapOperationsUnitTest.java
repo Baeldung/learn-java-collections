@@ -15,16 +15,15 @@ class BasicHashMapOperationsUnitTest {
 
     @BeforeEach
     void setUp() {
-        
+
         task1 = new Task("T001", "Complete Report", "Finish quarterly sales report", LocalDate.of(2025, 7, 15));
         task2 = new Task("T002", "Schedule Meeting", "Arrange team sync-up", LocalDate.of(2025, 7, 10));
         task3 = new Task("T003", "Review Code", "Review pull requests for Project X", LocalDate.of(2025, 7, 12));
-        
+
         Map<String, Task> tasks = Map.ofEntries(
-          Map.entry(task1.getCode(), task1),
-          Map.entry(task2.getCode(), task2),
-          Map.entry(task3.getCode(), task3)  
-        );
+            Map.entry(task1.getCode(), task1),
+            Map.entry(task2.getCode(), task2),
+            Map.entry(task3.getCode(), task3));
 
         taskMap = new HashMap<>(tasks);
     }

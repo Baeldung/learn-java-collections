@@ -14,37 +14,37 @@ class HashMapUnitTest {
 
     @Test
     void givenDefaultHashMapConstructor_whenInitializing_thenMapCreated() {
-        
+
         HashMap<String, Integer> map = new HashMap<>();
-      
+
         assertNotNull(map);
         assertEquals(0, map.size());
     }
 
     @Test
     void givenHashMapConstructorForInitialCapacity_whenInitializing_thenMapCreated() {
-        
+
         HashMap<String, Integer> map = new HashMap<>(32);
-      
+
         assertNotNull(map);
         assertEquals(0, map.size());
     }
 
     @Test
     void givenHashMapConstructorForInitialCapacityAndLoadFactor_whenInitializing_thenMapCreated() {
-    
+
         HashMap<String, Integer> map = new HashMap<>(64, 0.8f);
-        
+
         assertNotNull(map);
         assertEquals(0, map.size());
     }
 
     @Test
     void givenHashMapConstructorForMapInstance_whenInitializing_thenMapCreated() {
-        
+
         Map<String, String> originalMap = new HashMap<>();
         HashMap<String, String> copiedMap = new HashMap<>(originalMap);
-        
+
         assertEquals(originalMap.size(), copiedMap.size());
     }
 
@@ -53,8 +53,7 @@ class HashMapUnitTest {
         Map<String, Integer> fruitMap = Map.of(
             "apple", 1,
             "banana", 2,
-            "orange", 3
-        );
+            "orange", 3);
 
         assertEquals(3, fruitMap.size());
     }
@@ -62,9 +61,8 @@ class HashMapUnitTest {
     @Test
     void givenACollectionOfKeyValuePairs_whenUsingMapOfEntries_thenMapCreated() {
         Map<String, String> nameMap = Map.ofEntries(
-          Map.entry("firstName", "John"),
-          Map.entry("lastName", "Doe")
-        );
+            Map.entry("firstName", "John"),
+            Map.entry("lastName", "Doe"));
 
         assertEquals(2, nameMap.size());
     }
@@ -77,11 +75,10 @@ class HashMapUnitTest {
         Task task3 = new Task("T003", "Review Code", "Review pull requests for Project X", LocalDate.of(2025, 7, 12));
 
         Map<String, Task> taskMap = Map.ofEntries(
-          Map.entry(task1.getCode(), task1),
-          Map.entry(task2.getCode(), task2),
-          Map.entry(task3.getCode(), task3)  
-        );
-        
+            Map.entry(task1.getCode(), task1),
+            Map.entry(task2.getCode(), task2),
+            Map.entry(task3.getCode(), task3));
+
         assertEquals(3, taskMap.size());
     }
 }

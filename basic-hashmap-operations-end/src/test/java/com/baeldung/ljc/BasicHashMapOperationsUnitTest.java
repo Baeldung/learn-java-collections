@@ -143,7 +143,7 @@ class BasicHashMapOperationsUnitTest {
         // @formatter:on
 
         newTaskMap.putAll(taskMap);
-        
+
         assertEquals(4, newTaskMap.size());
         assertNotEquals("Different name", newTaskMap.get("T001")
             .getName());

@@ -52,7 +52,7 @@ public class JavaCollectionsTests {
     public void whenRemovingElementsConditionally_thenListNotContainingAny() {
         List<String> tasks = new ArrayList<>(List.of("Task Important", "Task Minor", "Task Urgent", "Task Normal"));
         assertTrue(tasks.contains("Task Minor"));
-        
+
         tasks.removeIf(task -> task.contains("Minor") || task.contains("Normal"));
 
         assertEquals(2, tasks.size());
@@ -63,16 +63,16 @@ public class JavaCollectionsTests {
     @Test
     public void whenClearingAList_thenListIsEmpty() {
         List<String> tasks = new ArrayList<>(List.of("Task A", "Task B", "Task C"));
-        
+
         tasks.clear();
-        
+
         assertTrue(tasks.isEmpty());
     }
 
     @Test
     public void whenReplacingAllElements_thenAllElementsTransformed() {
         List<String> tasks = new ArrayList<>(List.of("Task A", "Task B", "Task C"));
-        
+
         tasks.replaceAll(task -> task + " - Done");
 
         assertEquals("Task A - Done", tasks.get(0));

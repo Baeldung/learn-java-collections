@@ -78,7 +78,7 @@ public class JavaCollectionsTests {
     @Test
     public void whenClearingAList_thenListIsEmpty() {
         List<String> tasks = new ArrayList<>(List.of("Task A", "Task B", "Task C"));
-        
+
         while (!tasks.isEmpty()) {
             tasks.remove(0);
         }

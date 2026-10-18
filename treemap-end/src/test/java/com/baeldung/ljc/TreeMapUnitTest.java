@@ -39,7 +39,7 @@ class TreeMapUnitTest {
 
     @Test
     void givenTreeMapOfTasksAddedOutOfOrder_whenIterate_thenTasksSortedByKey() {
-   
+
         NavigableSet<String> keySet = taskMap.navigableKeySet();
         Iterator<String> keyIterator = keySet.iterator();
 
@@ -50,7 +50,7 @@ class TreeMapUnitTest {
 
     @Test
     void givenCustomSortedTreeMapOfTasks_whenIterate_thenKeysSortedByTaskNameReturned() {
-   
+
         Map<String, Task> initialTaskMap = new HashMap<>();
         initialTaskMap.put(taskA.getCode(), taskA);
         initialTaskMap.put(taskB.getCode(), taskB);
@@ -69,8 +69,8 @@ class TreeMapUnitTest {
 
     @Test
     void givenTreeMapOfTasks_whenPutAndRemoveTask_thenNaturalOrderPreserved() {
-        
-        Task newTask = new Task("TaskD", "Start Project", "Start a new project", LocalDate.of(2050, 7, 03));  
+
+        Task newTask = new Task("TaskD", "Start Project", "Start a new project", LocalDate.of(2050, 7, 03));
         taskMap.put(newTask.getCode(), newTask);
         assertEquals("TaskD", taskMap.lastKey());
 
@@ -85,7 +85,7 @@ class TreeMapUnitTest {
 
     @Test
     void givenTreeMapOfTasks_whenSubMapOfTasks_thenSubMapOfTasksReturned() {
-        
+
         SortedMap<String, Task> subMap = taskMap.subMap("TaskA", "TaskC");
 
         assertEquals(2, subMap.size());

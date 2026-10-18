@@ -16,7 +16,7 @@ class TreeMapUnitTest {
         taskA = new Task("TaskA", "Complete Report", "Finish quarterly sales report", LocalDate.of(2050, 7, 15));
         taskB = new Task("TaskB", "Schedule Meeting", "Arrange team sync-up", LocalDate.of(2050, 7, 10));
         taskC = new Task("TaskC", "Review Code", "Review pull requests for project", LocalDate.of(2050, 7, 12));
- 
+
         taskMap = new TreeMap<>();
 
         taskMap.put(taskB.getCode(), taskB);
@@ -24,4 +24,3 @@ class TreeMapUnitTest {
         taskMap.put(taskA.getCode(), taskA);
     }
 }
- 

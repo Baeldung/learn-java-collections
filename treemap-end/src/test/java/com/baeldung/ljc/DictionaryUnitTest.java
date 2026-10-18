@@ -10,7 +10,6 @@ import java.util.TreeMap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 class DictionaryUnitTest {
 
     private TreeMap<String, String> dictionary;
@@ -28,10 +27,10 @@ class DictionaryUnitTest {
 
     @Test
     void givenDictionary_whenGetWords_thenWordsInAlphabeticalOrder() {
-       
+
         assertEquals("Algorithm", dictionary.firstKey());
         assertEquals("Tree", dictionary.lastKey());
-   
+
         String afterCompiler = dictionary.higherKey("Compiler");
         assertEquals("Tree", afterCompiler, "Tree should come after Compiler");
     }
@@ -39,8 +38,8 @@ class DictionaryUnitTest {
     @Test
     void givenDictionary_whenRangeLookup_thenSubsetOfWordsReturned() {
         SortedMap<String, String> earlyTerms = dictionary.headMap("C");
-    
-        assertEquals(3, earlyTerms.size());  
+
+        assertEquals(3, earlyTerms.size());
         assertFalse(earlyTerms.containsKey("Compiler"));
         assertTrue(earlyTerms.containsKey("Binary"));
     }

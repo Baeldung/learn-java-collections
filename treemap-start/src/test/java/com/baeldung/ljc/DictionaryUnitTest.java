@@ -3,7 +3,6 @@ package com.baeldung.ljc;
 import org.junit.jupiter.api.BeforeEach;
 import java.util.TreeMap;
 
-
 class DictionaryUnitTest {
 
     private TreeMap<String, String> dictionary;

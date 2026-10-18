@@ -107,8 +107,8 @@ class LinkedHashMapUnitTest {
         }
 
         /**
-         * This method is called by put and putAll after inserting a new entry.
-         * It returns true if the eldest entry should be removed.
+         * This method is called by put and putAll after inserting a new entry. It
+         * returns true if the eldest entry should be removed.
          */
         @Override
         protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
@@ -123,7 +123,7 @@ class LinkedHashMapUnitTest {
 
         cache.put(task1.getCode(), task1); // Least recently used
         cache.put(task2.getCode(), task2);
-        cache.put(task3.getCode(), task3); // Most recently used 
+        cache.put(task3.getCode(), task3); // Most recently used
 
         Task task4 = new Task("T004", "Another Task", "Another description", null);
         cache.put(task4.getCode(), task4);

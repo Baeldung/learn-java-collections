@@ -125,7 +125,7 @@ class CollectionsUnitTest {
         Set<Task> emptySet = Collections.emptySet();
         assertTrue(emptySet.isEmpty());
 
-        //emptyCollections are immutable
+        // emptyCollections are immutable
         assertThrows(UnsupportedOperationException.class, () -> emptyList.add("a"));
     }
 
@@ -134,7 +134,7 @@ class CollectionsUnitTest {
         List<Task> unmodifiableTaskList = Collections.unmodifiableList(taskList);
         assertEquals(6, unmodifiableTaskList.size());
 
-        //unmodifiableCollections are immutable
+        // unmodifiableCollections are immutable
         assertThrows(UnsupportedOperationException.class, () -> unmodifiableTaskList.add(task01));
         assertThrows(UnsupportedOperationException.class, () -> Collections.sort(unmodifiableTaskList, Comparator.comparing(Task::getDueDate)));
     }

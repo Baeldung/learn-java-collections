@@ -5,9 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,10 +18,11 @@ import com.baeldung.ljc.domain.model.Task;
 class JavaCollectionsUnitTest {
 
     @Test
-    void givenSynchronizedTaskList_whenMultipleThreadsAdd_thenAllTasksRecordedButSlower() throws InterruptedException {
+    void givenSynchronizedTaskList_whenMultipleThreadsAdd_thenAllTasksRecorded() throws InterruptedException {
         List<String> list = Collections.synchronizedList(new ArrayList<>());
         Runnable writer = () -> {
-            for (int i = 0; i < 100; i++) { list.add("Task-" + i);
+            for (int i = 0; i < 100; i++) {
+                list.add("Task-" + i);
             }
         };
 
@@ -38,7 +41,11 @@ class JavaCollectionsUnitTest {
     @Test
     void givenConcurrentTaskCache_whenMultipleThreadsInitialize_thenTaskCreatedOnce() throws InterruptedException {
         ConcurrentHashMap<String, Task> taskCache = new ConcurrentHashMap<>();
-        Runnable worker = () -> taskCache.computeIfAbsent("001", id -> new Task(id, "Generated Task", "Created once", null));
+        AtomicInteger creationCount = new AtomicInteger();
+        Runnable worker = () -> taskCache.computeIfAbsent("001", id -> {
+            creationCount.incrementAndGet();
+            return new Task(id, "Generated Task", "Created once", null);
+        });
 
         Thread t1 = new Thread(worker);
         Thread t2 = new Thread(worker);
@@ -49,6 +56,7 @@ class JavaCollectionsUnitTest {
         t1.join();
         t2.join();
 
+        assertEquals(1, creationCount.get());
         assertEquals(1, taskCache.size());
         assertEquals("Generated Task", taskCache.get("001").getName());
     }
@@ -59,16 +67,10 @@ class JavaCollectionsUnitTest {
         observers.add("Observer A");
         observers.add("Observer B");
 
+        Iterator<String> snapshot = observers.iterator();
         List<String> seenDuringIteration = new ArrayList<>();
 
-        Thread reader = new Thread(() -> {
-            for (String obs : observers) {
-                seenDuringIteration.add(obs);
-                try {
-                    Thread.sleep(50); // simulate slow iteration
-                } catch (InterruptedException ignored) {}
-            }
-        });
+        Thread reader = new Thread(() -> snapshot.forEachRemaining(seenDuringIteration::add));
 
         Thread writer = new Thread(() -> {
             observers.add("New Observer A");
@@ -80,10 +82,10 @@ class JavaCollectionsUnitTest {
         reader.join();
         writer.join();
 
-        // The iterator only saw the original snapshot even if we add in the list new items
+        // The iterator retains the original snapshot regardless of worker scheduling
         assertEquals(List.of("Observer A", "Observer B"), seenDuringIteration);
 
-        // The new observers were added, but only visible after iteration
+        // The live list contains the new observers after the writer completes
         assertTrue(observers.contains("New Observer A"));
         assertTrue(observers.contains("New Observer B"));
     }

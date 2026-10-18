@@ -3,7 +3,7 @@ package com.baeldung.ljc.domain.model;
 import java.time.LocalDate;
 
 public class Task implements Comparable<Task> {
-    
+
     private String code;
 
     private String name;
@@ -19,12 +19,10 @@ public class Task implements Comparable<Task> {
         this.dueDate = dueDate;
     }
 
-    
     public String getCode() {
         return code;
     }
 
-    
     public void setCode(String code) {
         this.code = code;
     }
@@ -76,4 +74,3 @@ public class Task implements Comparable<Task> {
         return "Task [code= " + code + "name=" + name + ", description=" + description + ", dueDate=" + dueDate + "]";
     }
 }
-

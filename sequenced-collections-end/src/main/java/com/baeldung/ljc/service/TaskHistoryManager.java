@@ -17,17 +17,20 @@ public class TaskHistoryManager {
     }
 
     public Task getLastTask() {
-        if (history.isEmpty()) return null;
+        if (history.isEmpty())
+            return null;
         return history.getLast();
     }
 
     public Task getFirstTask() {
-        if (history.isEmpty()) return null;
+        if (history.isEmpty())
+            return null;
         return history.getFirst();
     }
 
     public Task undoLastTask() {
-        if (history.isEmpty()) return null;
+        if (history.isEmpty())
+            return null;
         return history.removeLast();
     }
 
@@ -40,4 +43,3 @@ public class TaskHistoryManager {
         return history.stream().map(Task::getCode).collect(Collectors.joining(" -> "));
     }
 }
-

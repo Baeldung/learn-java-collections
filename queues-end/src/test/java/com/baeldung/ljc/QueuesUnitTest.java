@@ -20,7 +20,6 @@ import com.baeldung.ljc.domain.model.Task;
 
 class QueuesUnitTest {
 
-
     @Test
     void givenQueueMethods_whenComparingAddAndOffer_thenBothAddElements() {
         Queue<Task> taskQueue = new LinkedList<>();
@@ -145,4 +144,3 @@ class QueuesUnitTest {
     }
 
 }
-

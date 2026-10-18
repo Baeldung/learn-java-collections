@@ -27,35 +27,35 @@ class SequencedCollectionsUnitTest {
         taskB = new Task("TaskB", "Schedule Meeting", "Arrange team sync-up", LocalDate.of(2050, 7, 10));
         taskC = new Task("TaskC", "Review Code", "Review pull requests for project", LocalDate.of(2050, 7, 12));
     }
-    
+
     @Test
     void givenListOfTasks_whenUsingSequencedList_thenCanGetLastTaskAndReverseView() {
-        
+
         List<Task> taskList = new ArrayList<>();
         taskList.add(taskA);
         taskList.add(taskB);
         taskList.add(taskC);
-        
+
         assertEquals(taskC, taskList.getLast());
         assertEquals(taskC, taskList.reversed().getFirst());
     }
 
     @Test
     void givenDequeOfTasks_whenUsingSequencedDeque_thenCanReverseView() {
-         
+
         Deque<Task> taskDeque = new ArrayDeque<>();
-        taskDeque.addLast(taskA);  
+        taskDeque.addLast(taskA);
         taskDeque.addLast(taskB);
-        taskDeque.addLast(taskC);  
+        taskDeque.addLast(taskC);
 
         Deque<Task> reversedDeque = taskDeque.reversed();
         assertEquals(taskA, reversedDeque.getLast());
         assertEquals(taskC, reversedDeque.getFirst());
     }
-    
+
     @Test
     void givenSetOfTasks_whenUsingSequencedSet_thenGetLastTaskIsConsistent() {
-        
+
         SequencedSet<Task> taskSet = new LinkedHashSet<>();
         taskSet.add(taskA);
         taskSet.add(taskB);
@@ -70,7 +70,7 @@ class SequencedCollectionsUnitTest {
         taskMap.put("TaskA", taskA);
         taskMap.put("TaskB", taskB);
         taskMap.put("TaskC", taskC);
-    
+
         assertEquals("TaskA", taskMap.firstEntry()
             .getKey());
         assertEquals("TaskC", taskMap.lastEntry()

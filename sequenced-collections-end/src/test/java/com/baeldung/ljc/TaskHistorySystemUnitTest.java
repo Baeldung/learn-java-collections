@@ -30,23 +30,23 @@ class TaskHistorySystemUnitTest {
         manager.addTask(taskA);
         manager.addTask(taskB);
         manager.addTask(taskC);
-        
+
         assertEquals(taskA, manager.getFirstTask());
         assertEquals(taskC, manager.getLastTask());
 
         SequencedCollection<Task> recentHistory = manager.getRecentHistory();
         assertEquals(taskC, recentHistory.getFirst());
         assertEquals(taskA, recentHistory.getLast());
-        
+
         assertEquals(taskC, manager.undoLastTask());
         assertEquals(taskB, manager.getLastTask());
     }
-    
+
     @Test
     void givenTaskHistoryManager_whenBackedByList_thenOk() {
         runCommonTests(new ArrayList<>());
     }
-    
+
     @Test
     void givenTaskHistoryManager_whenBackedBySet_thenOk() {
         runCommonTests(new LinkedHashSet<>());

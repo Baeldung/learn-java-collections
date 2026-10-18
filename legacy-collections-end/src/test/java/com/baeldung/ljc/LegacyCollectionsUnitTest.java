@@ -43,20 +43,24 @@ class LegacyCollectionsUnitTest {
     @Test
     void whenUsingVector_thenItIsThreadSafe() throws InterruptedException {
         List<Integer> list = new Vector<>();
-        // List<Integer> list = new ArrayList<>(); // If we use ArrayList here, it would make the test fail due to lack of synchronization
+        // List<Integer> list = new ArrayList<>(); // Concurrent ArrayList updates are
+        // unsafe and may lose elements; failure is not guaranteed
         CountDownLatch latch = new CountDownLatch(THREADS);
 
         for (int i = 0; i < THREADS; i++) {
             new Thread(() -> {
-                for (int j = 0; j < ELEMENTS_PER_THREAD; j++) {
-                    list.add(j);
+                try {
+                    for (int j = 0; j < ELEMENTS_PER_THREAD; j++) {
+                        list.add(j);
+                    }
+                } finally {
+                    latch.countDown();
                 }
-                latch.countDown();
             }).start();
         }
 
         latch.await();
-        assertEquals(THREADS * ELEMENTS_PER_THREAD, list.size()); // For ArrayList this would fail!
+        assertEquals(THREADS * ELEMENTS_PER_THREAD, list.size()); // An unsafe ArrayList may lose updates; a passing run would not make it safe.
     }
 
     @Test

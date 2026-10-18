@@ -13,7 +13,6 @@ import com.baeldung.ljc.domain.model.Task;
 
 class LinkedHashSetUnitTest {
 
-
     @Test
     void whenUsingLinkedHashSet_thenElementsPreserveInsertionOrder() {
         LinkedHashSet<String> mySet = new LinkedHashSet<>();
@@ -23,7 +22,6 @@ class LinkedHashSetUnitTest {
         mySet.add("four");
         assertEquals("[one, two, three, four]", mySet.toString());
     }
-
 
     @Test
     void whenUsingLinkedHashSetToMaintainWorkflow_thenCorrect() {

@@ -24,7 +24,7 @@ class HashSetUnitTest {
     @BeforeEach
     void resetTasks() {
         tasks = new HashSet<>(List.of(
-            // @formatter:off
+        // @formatter:off
             new Task("T01", "Task 01", "This is Task A", null),
             new Task("T02", "Task 02", "This is Task B", null),
             new Task("T03", "Task 03", "This is Task C", null),

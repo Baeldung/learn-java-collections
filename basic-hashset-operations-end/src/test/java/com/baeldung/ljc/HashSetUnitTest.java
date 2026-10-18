@@ -128,7 +128,8 @@ class HashSetUnitTest {
     void whenRemoveWithRemoveIf_thenCorrect() {
         // remove tasks by a condition
         tasks.removeIf(task -> task.getDescription()
-            .endsWith("Task A") || task.getName()
+            .endsWith("Task A") ||
+            task.getName()
                 .contains("03"));
         System.out.println(tasks);
     }

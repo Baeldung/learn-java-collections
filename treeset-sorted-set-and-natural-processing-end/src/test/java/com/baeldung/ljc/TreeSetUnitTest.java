@@ -34,7 +34,7 @@ public class TreeSetUnitTest {
     @Test
     void whenUsingTaskComparator_thenTasksSortedByCodeLength() {
         Comparator<Task> byCodeLength = Comparator.comparingInt(t -> t.getCode()
-          .length());
+            .length());
         TreeSet<Task> tasks = new TreeSet<>(byCodeLength);
         tasks.add(new Task("02", "B", "B", null));
         tasks.add(new Task("010", "C", "C", null));
@@ -81,7 +81,8 @@ public class TreeSetUnitTest {
         TreeSet<String> tree = new TreeSet<>(data);
         List<String> treeOrder = new ArrayList<>(tree);
 
-        assertNotEquals(hashOrder, linkedOrder);
+        assertEquals(new HashSet<>(data), new HashSet<>(hashOrder));
+        assertEquals(data, linkedOrder);
         assertNotEquals(linkedOrder, treeOrder);
         assertEquals(List.of("de", "es", "fr"), treeOrder);
     }
